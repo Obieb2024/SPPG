@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pengisian Data SPPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Formulir Data SPPG</h2>
+        <form id="sppgForm">
+            <div class="form-group">
+                <label for="kecamatan">Kecamatan</label>
+                <select id="kecamatan" name="kecamatan" required>
+                    <option value="">-- Pilih Kecamatan --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="kelurahan">Kelurahan/Desa</label>
+                <select id="kelurahan" name="kelurahan" disabled required>
+                    <option value="">-- Pilih Kelurahan/Desa --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nama_sppg">Nama SPPG</label>
+                <select id="nama_sppg" name="nama_sppg" disabled required>
+                    <option value="">-- Pilih Nama SPPG --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Status</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="status" value="TIDAK BERMASALAH" required>
+                        Tidak Bermasalah
+                    </label>
+                    <label>
+                        <input type="radio" name="status" value="BERMASALAH" required>
+                        Bermasalah
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="keterangan">Keterangan</label>
+                <select id="keterangan" name="keterangan" required>
+                    <option value="">-- Pilih Keterangan --</option>
+                    <option value="Berjalan">Berjalan</option>
+                    <option value="Gangguan Pencernaan">Gangguan Pencernaan</option>
+                    <option value="Bermasalah IPAL">Bermasalah IPAL</option>
+                    <option value="Bermasalah SLHS">Bermasalah SLHS</option>
+                    <option value="Bermasalah IPAL dan SLHS">Bermasalah IPAL dan SLHS</option>
+                    <option value="MIX (IPAL">MIX (IPAL,SLHS,dll)</option>
+                    <option value="Masalah lainnya (Temuan Benda Asing">Masalah lainnya (Temuan Benda Asing)</option>
+                    <option value="Konflik Pengelola SPPG">Konflik Pengelola SPPG</option>
+                    <option value="Masalah Mitra">Masalah Mitra</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="keterangan_tambahan">Keterangan Tambahan</label>
+                <textarea id="keterangan_tambahan" name="keterangan_tambahan" rows="3" placeholder="Masukkan keterangan tambahan jika ada..."></textarea>
+            </div>
+
+            <div class="form-group document-section">
+                <label style="font-weight: bold; margin-bottom: 15px; display: block; color: #1e3a8a;">A. Baik kategori Bermasalah dan Tidak Bermasalah, wajib sisipkan foto dokumentasi</label>
+                <div class="file-group">
+                    <label for="foto_depan" class="sub-label">1. Foto Tampak Depan SPPG</label>
+                    <input type="file" id="foto_depan" name="foto_depan" accept="image/*">
+                    <div id="preview_foto_depan" class="preview-container"></div>
+                </div>
+                <div class="file-group">
+                    <label for="foto_operasional" class="sub-label">2. Foto Operasional SPPG (Bisa pilih lebih dari 1 foto)</label>
+                    <input type="file" id="foto_operasional" name="foto_operasional" accept="image/*" multiple>
+                    <div id="preview_foto_operasional" class="preview-container"></div>
+                </div>
+            </div>
+
+            <div class="form-group document-section hidden" id="group_bukti_bermasalah">
+                <label style="font-weight: bold; margin-bottom: 10px; display: block; color: #1e3a8a;">B. Khusus kategori Bermasalah, mohon tambahkan lampiran bukti pendukung permasalahan (Bisa pilih lebih dari 1 berkas)</label>
+                <div class="file-group">
+                    <input type="file" id="bukti_pendukung" name="bukti_pendukung" accept="image/*,application/pdf" multiple>
+                    <div id="preview_bukti_pendukung" class="preview-container"></div>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn-submit">Simpan Data</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
