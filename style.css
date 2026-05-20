@@ -1,227 +1,654 @@
+/* =========================================================================
+   1. GLOBAL STYLES & DESIGN TOKENS
+   ========================================================================= */
+:root {
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --primary-light: #e0e7ff;
+    
+    --success: #10b981;
+    --success-hover: #059669;
+    --success-light: #ecfdf5;
+    
+    --danger: #ef4444;
+    --danger-hover: #dc2626;
+    --danger-light: #fef2f2;
+    
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-900: #0f172a;
+    
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.08);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+    
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background-color: #f3f4f6;
+    background-color: var(--slate-50);
+    background-image: radial-gradient(at 0% 0%, var(--primary-light) 0px, transparent 50%),
+                      radial-gradient(at 100% 100%, #d1fae5 0px, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 2rem 1rem;
+    align-items: flex-start;
+    padding: 3rem 1.5rem;
+    color: var(--slate-900);
 }
 
+/* =========================================================================
+   2. MAIN CONTAINER & CARD STYLING
+   ========================================================================= */
 .container {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--slate-200);
     width: 100%;
-    max-width: 600px;
+    max-width: 650px;
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.5s ease-out;
 }
 
-h2 {
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary), var(--success));
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================================
+   3. HEADER STYLING
+   ========================================================================= */
+.form-header {
     text-align: center;
-    margin-bottom: 1.5rem;
-    color: #1f2937;
+    margin-bottom: 2.5rem;
 }
 
-.form-group {
+.logo-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 0.85rem;
+    border-radius: var(--radius-md);
     margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
 }
 
-label {
+.logo-box:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.header-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.form-header h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    font-size: 0.9rem;
+    color: var(--slate-600);
+    line-height: 1.4;
+}
+
+/* =========================================================================
+   4. FORM GROUPS & CONTROLS
+   ========================================================================= */
+.form-group {
+    margin-bottom: 1.75rem;
+    position: relative;
+}
+
+.form-group > label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #374151;
+    color: var(--slate-700);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    transition: var(--transition);
 }
 
-select,
-input[type="url"],
-textarea {
+/* Custom Dropdown Arrow */
+.select-wrapper {
+    position: relative;
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #d1d5db;
-    border-radius: 4px;
+}
+
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--slate-600);
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.select-wrapper:hover::after {
+    border-top-color: var(--primary);
+}
+
+select {
+    width: 100%;
+    padding: 0.85rem 2.5rem 0.85rem 1.1rem;
+    border: 1px solid var(--slate-300);
+    border-radius: var(--radius-md);
     outline: none;
-    font-size: 1rem;
-    transition: border-color 0.2s;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--slate-900);
+    background-color: var(--white);
+    appearance: none;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
 }
 
-textarea {
-    resize: vertical;
-    min-height: 80px;
+select:hover:not(:disabled) {
+    border-color: var(--primary);
 }
 
-select:focus,
-input:focus,
-textarea:focus {
-    border-color: #3b82f6;
+select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
 }
 
 select:disabled {
-    background-color: #e5e7eb;
+    background-color: var(--slate-100);
+    border-color: var(--slate-200);
+    color: var(--slate-600);
     cursor: not-allowed;
-    color: #6b7280;
+}
+
+/* Textarea styling */
+textarea {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    border: 1px solid var(--slate-300);
+    border-radius: var(--radius-md);
+    outline: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--slate-900);
+    background-color: var(--white);
+    resize: vertical;
+    min-height: 90px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+textarea:hover {
+    border-color: var(--primary);
+}
+
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
 }
 
 .hidden {
     display: none !important;
 }
 
-.radio-group {
+/* =========================================================================
+   5. PREMIUM SEGMENTED STATUS CARDS
+   ========================================================================= */
+.status-segmented {
     display: flex;
-    gap: 1.5rem;
-    padding: 0.5rem 0;
-}
-
-.radio-group label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: normal;
-    cursor: pointer;
-}
-
-.btn-submit {
-    width: 100%;
-    padding: 0.875rem;
-    background-color: #3b82f6;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    margin-top: 1rem;
-}
-
-.btn-submit:hover {
-    background-color: #2563eb;
-}
-
-.document-section {
-    background: #f9fafb;
-    padding: 1.25rem;
-    border-radius: 6px;
-    border: 1px solid #e5e7eb;
-    margin-top: 1.5rem;
-}
-
-.document-section > label {
-    font-size: 1.05rem;
-    color: #111827;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.file-group {
-    margin-bottom: 1rem;
-}
-
-.file-group:last-child {
-    margin-bottom: 0;
-}
-
-.sub-label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #4b5563;
-    margin-bottom: 0.35rem;
-}
-
-/* Premium styling for file inputs */
-input[type="file"] {
-    display: block;
-    width: 100%;
-    font-size: 0.9rem;
-    color: #4b5563;
-}
-
-input[type="file"]::file-selector-button {
-    background-color: #f3f4f6;
-    color: #1f2937;
-    border: 1px solid #d1d5db;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-right: 1rem;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-input[type="file"]::file-selector-button:hover {
-    background-color: #e5e7eb;
-    border-color: #9ca3af;
-}
-
-/* Image preview styles */
-.preview-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    gap: 1rem;
     margin-top: 0.5rem;
 }
 
-.preview-container img, 
-.preview-container .file-icon-preview {
-    max-width: 150px;
-    max-height: 150px;
-    border-radius: 4px;
-    object-fit: contain;
-    border: 1px dashed #d1d5db;
-    padding: 6px;
-    background: #ffffff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.status-option {
+    flex: 1;
+    position: relative;
 }
 
-.preview-container .file-icon-preview {
+.status-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.status-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1rem 1.1rem;
+    background: var(--white);
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.status-card:hover {
+    border-color: var(--slate-300);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.status-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.status-svg {
+    width: 18px;
+    height: 18px;
+}
+
+.status-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--slate-900);
+}
+
+.status-desc {
+    font-size: 0.75rem;
+    color: var(--slate-600);
+    margin-top: 0.1rem;
+}
+
+/* Status: Tidak Bermasalah (Aman) Checked */
+.status-card-aman .status-icon-wrapper {
+    background-color: var(--slate-100);
+    color: var(--slate-600);
+}
+
+#status_aman:checked + .status-card-aman {
+    border-color: var(--success);
+    background-color: var(--success-light);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+#status_aman:checked + .status-card-aman .status-icon-wrapper {
+    background-color: var(--success);
+    color: var(--white);
+}
+
+#status_aman:checked + .status-card-aman .status-title {
+    color: var(--success-hover);
+}
+
+/* Status: Bermasalah Checked */
+.status-card-masalah .status-icon-wrapper {
+    background-color: var(--slate-100);
+    color: var(--slate-600);
+}
+
+#status_masalah:checked + .status-card-masalah {
+    border-color: var(--danger);
+    background-color: var(--danger-light);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+#status_masalah:checked + .status-card-masalah .status-icon-wrapper {
+    background-color: var(--danger);
+    color: var(--white);
+}
+
+#status_masalah:checked + .status-card-masalah .status-title {
+    color: var(--danger-hover);
+}
+
+/* =========================================================================
+   6. PREMIUM DOCUMENT SECTION & UPLOAD CARD
+   ========================================================================= */
+.document-section {
+    background: var(--slate-50);
+    padding: 1.75rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--slate-200);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section-title-box {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--slate-200);
+    padding-bottom: 0.85rem;
+}
+
+.section-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.badge-a {
+    background-color: var(--primary);
+}
+
+.badge-b {
+    background-color: var(--danger);
+}
+
+.section-title {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: var(--slate-900) !important;
+    margin-bottom: 0 !important;
+}
+
+/* File Upload Card Area */
+.file-upload-card {
+    background: var(--white);
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.file-upload-card:last-child {
+    margin-bottom: 0;
+}
+
+.file-upload-card:hover {
+    border-color: var(--slate-300);
+    box-shadow: var(--shadow-md);
+}
+
+.file-upload-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.file-upload-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background-color: var(--slate-100);
+    color: var(--slate-700);
+}
+
+.upload-icon-svg {
+    width: 20px;
+    height: 20px;
+}
+
+.file-upload-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-upload-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--slate-900);
+}
+
+.file-upload-hint {
+    font-size: 0.75rem;
+    color: var(--slate-600);
+    margin-top: 0.1rem;
+}
+
+.file-upload-body {
+    position: relative;
+    width: 100%;
+}
+
+/* Hide real file input style */
+.real-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.custom-file-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px dashed var(--slate-300);
+    border-radius: var(--radius-md);
+    background-color: var(--slate-50);
+    color: var(--slate-700);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.real-file-input:hover + .custom-file-trigger {
+    border-color: var(--primary);
+    background-color: var(--primary-light);
+    color: var(--primary);
+}
+
+/* =========================================================================
+   7. FILE PREVIEWS GALLERY
+   ========================================================================= */
+.preview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.85rem;
+    margin-top: 1rem;
+}
+
+.preview-wrapper {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--slate-200);
+    box-shadow: var(--shadow-sm);
+    background: var(--slate-100);
+    animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.preview-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.preview-wrapper:hover img {
+    transform: scale(1.08);
+}
+
+/* Fallback Document Icon Preview */
+.preview-wrapper .file-icon-preview {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 120px;
-    height: 120px;
-    font-size: 0.8rem;
-    color: #4b5563;
-    background-color: #f3f4f6;
+    width: 100%;
+    height: 100%;
+    background-color: var(--slate-100);
+    color: var(--slate-700);
+    padding: 0.5rem;
     text-align: center;
+    font-size: 0.75rem;
 }
 
-/* Individual preview items styling with delete buttons */
-.preview-wrapper {
-    position: relative;
-    display: inline-block;
+.preview-wrapper .file-icon-preview span {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 0.25rem;
+    font-weight: 500;
 }
 
+/* Delete Button on Previews */
 .preview-delete-btn {
     position: absolute;
-    top: -6px;
-    right: -6px;
-    background-color: #ef4444;
-    color: #ffffff;
+    top: 6px;
+    right: 6px;
+    background-color: var(--danger);
+    color: var(--white);
     border: none;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 14px;
-    line-height: 18px;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 1;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.2s, transform 0.1s;
-    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: var(--transition);
+    z-index: 5;
 }
 
 .preview-delete-btn:hover {
-    background-color: #dc2626;
-    transform: scale(1.1);
+    background-color: var(--danger-hover);
+    transform: scale(1.15);
+}
+
+/* =========================================================================
+   8. SUBMIT BUTTON & FEEDBACKS
+   ========================================================================= */
+.btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary), #6366f1);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+    transition: var(--transition);
+    margin-top: 2rem;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--primary-hover), #4f46e5);
+    box-shadow: 0 6px 14px rgba(79, 70, 229, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-submit:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.btn-submit:disabled {
+    background: var(--slate-300);
+    box-shadow: none;
+    color: var(--slate-600);
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .status-segmented {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
 }
