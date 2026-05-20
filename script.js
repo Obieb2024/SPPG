@@ -21,10 +21,154 @@ const dataSppg = {
         "RAWAMENENG": ["SPPG Subang Blanakan Rawameneng"]
     },
     "CIASEM": {
-        "CIASEM BARU": ["SPPG Subang Ciasem Ciasem Baru 2", "SPPG Subang Ciasem Ciasem Baru 3"]
+        "CIASEM BARU": ["SPPG Subang Ciasem Ciasem Baru", "SPPG Subang Ciasem Ciasem Baru 2", "SPPG Subang Ciasem Ciasem Baru 3"],
+        "CIASEM HILIR": ["SPPG Subang Ciasem Ciasem Hilir"],
+        "DUKUH": ["SPPG Subang Ciasem Dukuh", "SPPG Subang Ciasem Dukuh 2"],
+        "SUKAHAJI": ["SPPG Subang Ciasem Sukahaji"],
+        "SUKAMANDIJAYA": ["SPPG Subang Ciasem Sukamandijaya 1", "SPPG Subang Ciasem Sukamandijaya 2", "SPPG Subang Ciasem Sukamandijaya 3", "SPPG Subang Ciasem Sukamandijaya 4", "SPPG Subang Ciasem Sukamandijaya 5"]
+    },
+    "CIATER": {
+        "CISAAT": ["SPPG Subang Ciater Cisaat"],
+        "PALASARI": ["SPPG Subang Ciater Palasari 1", "SPPG Subang Ciater Palasari 2"],
+        "SANCA": ["SPPG Subang Ciater Sanca"]
+    },
+    "CIBOGO": {
+        "BELENDUNG": ["SPPG Subang Cibogo Belendung 1", "SPPG Subang Cibogo Belendung 2"],
+        "CIBOGO": ["SPPG Subang Cibogo Cibogo"]
+    },
+    "CIJAMBE": {
+        "CIJAMBE": ["SPPG Subang Cijambe Cijambe"],
+        "CIMENTENG": ["SPPG Subang Cijambe Cimenteng"],
+        "CIRANGKONG": ["SPPG Subang Cijambe Cirangkong"],
+        "GUNUNGTUA": ["SPPG Subang Cijambe Gunungtua"],
+        "TANJUNGWANGI": ["SPPG Subang Cijambe Tanjungwangi", "SPPG Subang Cijambe Tanjungwangi 2"]
+    },
+    "CIKAUM": {
+        "CIKAUM BARAT": ["SPPG Subang Cikaum Cikaum Barat", "SPPG Subang Cikaum Cikaum Barat 2"],
+        "CIKAUM TIMUR": ["SPPG Subang Cikaum Cikaum Timur"],
+        "SINDANGSARI": ["SPPG Subang Cikaum Sindangsari", "SPPG Subang Cikaum Sindangsari 2"],
+        "TANJUNGSARI TIMUR": ["SPPG Subang Cikaum Tanjungsari Timur"]
+    },
+    "CIPEUNDEUY": {
+        "CIPEUNDEUY": ["SPPG Subang Cipeundeuy Cipeundeuy"],
+        "KARANGMUKTI": ["SPPG Subang Cipeundeuy Karangmukti"],
+        "KOSAR": ["SPPG Subang Cipeundeuy Kosar"],
+        "LENGKONG": ["SPPG Subang Cipeundeuy Lengkong"],
+        "WANTILAN": ["SPPG Subang Cipeundeuy Wantilan", "SPPG Subang Cipeundeuy Wantilan 2", "SPPG Subang Cipeundeuy Cipeundeuy 2"]
+    },
+    "CIPUNAGARA": {
+        "MANYINGSAL": ["SPPG Subang Cipunagara Manyingsal"],
+        "PADAMULYA": ["SPPG Subang Cipunagara Padamulya"],
+        "SIDAJAYA": ["SPPG Subang Cipunagara Sidajaya"],
+        "SIMPAR": ["SPPG Subang Cipunagara Simpar"],
+        "TANJUNG": ["SPPG Subang Cipunagara Tanjung 1", "SPPG Subang Cipunagara Tanjung 2"]
+    },
+    "CISALAK": {
+        "CIGADOG": ["SPPG Subang Cisalak Cigadog"],
+        "CISALAK": ["SPPG Subang Cisalak Cisalak"],
+        "CUPUNAGARA": ["SPPG Subang Cisalak Cupunagara"],
+        "DARMAGA": ["SPPG Subang Cisalak Darmaga", "SPPG Subang Cisalak Darmaga 2"],
+        "GARDUSAYANG": ["SPPG Subang Cisalak Gardusayang"],
+        "PAKUHAJI": ["SPPG Subang Cisalak Pakuhaji", "SPPG Subang Cisalak Pakuhaji 2", "SPPG Subang Cisalak Pakuhaji 3"]
+    },
+    "COMPRENG": {
+        "COMPRENG": ["SPPG Subang Compreng Compreng"],
+        "JATIMULYA": ["SPPG Subang Compreng Jatimulya", "SPPG Subang Compreng Jatimulya 2"],
+        "KIARASARI": ["SPPG Subang Compreng Kiarasari", "SPPG Subang Compreng Kiarasari 2"]
+    },
+    "DAWUAN": {
+        "DAWUAN KALER": ["SPPG Subang Dawuan Dawuan Kaler"],
+        "DAWUAN KIDUL": ["SPPG Subang Dawuan Dawuan Kidul"],
+        "MANYETI": ["SPPG Subang Dawuan Manyeti", "SPPG Subang Dawuan Manyeti 2"]
+    },
+    "JALANCAGAK": {
+        "BUNIHAYU": ["SPPG Subang Jalancagak Bunihayu", "SPPG Subang Jalancagak Bunihayu 2", "SPPG Subang Jalancagak Bunihayu 3"],
+        "CURUGRENDENG": ["SPPG Subang Jalancagak Curugrendeng", "SPPG Subang Jalancagak Curugrendeng 2"],
+        "JALANCAGAK": ["SPPG Subang Jalancagak Jalancagak", "SPPG Subang Jalancagak Jalancagak 2"],
+        "TAMBAKAN": ["SPPG Subang Jalancagak Tambakan", "SPPG Subang Jalancagak Tambakan 2", "SPPG Subang Jalancagak Tambakan 3"],
+        "TAMBAKMEKAR": ["SPPG Subang Jalancagak Tambakmekar"]
+    },
+    "KALIJATI": {
+        "KALIANGSANA": ["SPPG Subang Kalijati Kaliangsana"],
+        "KALIJATI BARAT": ["SPPG Subang Kalijati Kalijati Barat", "SPPG Subang Kalijati Kalijati Barat 2", "SPPG Subang Kalijati Kalijati Barat 4"],
+        "KALIJATI TIMUR": ["SPPG Subang Kalijati Kalijati Timur", "SPPG Subang Kalijati Kalijati Timur 2"],
+        "MARENGMANG": ["SPPG Subang Kalijati Marengmang"],
+        "TANGGULUN BARAT": ["SPPG Subang Kalijati Tanggulun Barat"]
+    },
+    "KASOMALANG": {
+        "KASOMALANG WETAN": ["SPPG Subang Kasomalang Kasomalang Wetan"],
+        "SINDANGSARI": ["SPPG Subang Kasomalang Sindangsari", "SPPG Subang Kasomalang Sindangsari 2", "SPPG Subang Kasomalang Sindangsari 3", "SPPG Subang Kasomalang Sindangsari 4"],
+        "TENJOLAYA": ["SPPG Subang Kasomalang Tenjolaya"]
+    },
+    "LEGONKULON": {
+        "BOBOS": ["SPPG Subang Legonkulon Bobos"],
+        "LEGONKULON": ["SPPG Subang Legonkulon Legonkulon"]
+    },
+    "PABUARAN": {
+        "KADAWUNG": ["SPPG Subang Pabuaran Kadawung"],
+        "PABUARAN": ["SPPG Subang Pabuaran Pabuaran", "SPPG Subang Pabuaran Pabuaran 2", "SPPG Subang Pabuaran Pabuaran 3"],
+        "SALAMJAYA": ["SPPG Subang Pabuaran Salamjaya"]
+    },
+    "PAGADEN": {
+        "GAMBARSARI": ["SPPG Subang Pegaden Gambarsari"],
+        "GEMBOR": ["SPPG Subang Pagaden Gembor"],
+        "KAMARUNG": ["SPPG Subang Pagaden Kamarung", "SPPG Subang Pagaden Kamarung 2"],
+        "SUKAMULYA": ["SPPG Subang Pagaden Sukamulya 1", "SPPG Subang Pagaden Sukamulya 2", "SPPG Subang Pagaden Sukamulya 3"]
+    },
+    "PAGADEN BARAT": {
+        "MARGAHAYU": ["SPPG Subang Pagaden Barat Margahayu"],
+        "SUMURGINTUNG": ["SPPG Subang Pagaden Barat Sumurgintung"]
+    },
+    "PAMANUKAN": {
+        "MULYASARI": ["SPPG Subang Pamanukan Mulyasari"],
+        "PAMANUKAN": ["SPPG Subang Pamanukan Pamanukan"],
+        "PAMANUKAN HILIR": ["SPPG Subang Pamanukan Pamanukan Hilir"],
+        "RANCASARI": ["SPPG Subang Pamanukan Rancasari", "SPPG Subang Pamanukan Rancasari 2", "SPPG Subang Pamanukan Rancasari 3", "SPPG Subang Pamanukan Rancasari 4"]
+    },
+    "PATOKBEUSI": {
+        "CIBERES": ["SPPG Subang Patokbeusi Ciberes"],
+        "GEMPOLSARI": ["SPPG Subang Patokbeusi Gempolsari"],
+        "RANCABANGO": ["SPPG Subang Patokbeusi Rancabango", "SPPG Subang Patokbeusi Rancabango 2", "SPPG Subang Patokbeusi Rancabango 3"],
+        "RANCAMULYA": ["SPPG Subang Patokbeusi Rancamulya"],
+        "TAMBAKJATI": ["SPPG Subang Patokbeusi Tambakjati", "SPPG Subang Patokbeusi Tambakjati 2"],
+        "TANJUNGRASA": ["SPPG Subang Patokbeusi Tanjungrasa"],
+        "TANJUNGRASA KIDUL": ["SPPG Subang Patokbeusi Tanjungrasa Kidul"]
+    },
+    "PURWADADI": {
+        "BELENDUNG": ["SPPG Subang Purwadadi Belendung"],
+        "PANYINGKIRAN": ["SPPG Subang Purwadadi Panyingkiran"],
+        "PRAPATAN": ["SPPG Subang Purwadadi Prapatan", "SPPG Subang Purwadadi Prapatan 2"],
+        "PURWADADI BARAT": ["SPPG Subang Purwadadi Purwadadi Barat"],
+        "WANAKERTA": ["SPPG Subang Purwadadi Wanakerta"]
+    },
+    "PUSAKAJAYA": {
+        "BOJONGJAYA": ["SPPG Subang Pusakajaya Bojongjaya"],
+        "CIGUGUR": ["SPPG Subang Pusakajaya Cigugur"],
+        "KARANGANYAR": ["SPPG Subang Pusakajaya Karanganyar"],
+        "KEBONDANAS": ["SPPG Subang Pusakajaya Kebondanas"],
+        "PUSAKAJAYA": ["SPPG Subang Pusakajaya Pusakajaya"]
+    },
+    "PUSAKANAGARA": {
+        "KOTASARI": ["SPPG Subang Pusakanagara Kotasari"],
+        "PATIMBAN": ["SPPG Subang Pusakanagara Patimban"],
+        "PUSAKARATU": ["SPPG Subang Pusakanagara Pusakaratu", "SPPG Subang Pusakanagara Pusakaratu 2"]
+    },
+    "SAGALAHERANG": {
+        "SAGALAHERANG KALER": ["SPPG Subang Sagalaherang Sagalaherang kaler", "SPPG Subang Sagalaherang Sagalaherang Kaler 2", "SPPG Subang Sagalaherang Sagalaherang Kaler 3", "SPPG Subang Sagalaherang Sagalaherang Kaler 4"],
+        "SAGALAHERANG KIDUL": ["SPPG Subang Sagalaherang Sagalaherang Kidul"],
+        "SUKAMANDI": ["SPPG Subang Sagalaherang Sukamandi"]
+    },
+    "SERANGPANJANG": {
+        "CIJENGKOL": ["SPPG Subang Serangpanjang Cijengkol"],
+        "CIKUJANG": ["SPPG Subang Serangpanjang Cikujang"],
+        "PONGGANG": ["SPPG Subang Serangpanjang Ponggang"]
     },
     "SUBANG": {
-        "PASIRKAREUMBI": ["SPPG Subang Subang Pasirikareumbi 1", "SPPG Subang Subang Pasirikareumbi 3"],
+        "CIGADUNG": ["SPPG Subang Subang Cigadung", "SPPG Subang Subang Cigadung 2"],
+        "DANGDEUR": ["SPPG Subang Subang Dangdeur", "SPPG Subang Subang Dangdeur 2", "SPPG Subang Subang Dangdeur 3", "SPPG Subang Subang Dangdeur 4", "SPPG Subang Subang Dangdeur 5", "SPPG Subang Subang Dangdeur 6", "SPPG Subang Subang Dangdeur 7", "SPPG Subang Subang Dangdeur 8", "SPPG Subang Subang Dangdeur 9", "SPPG Subang Subang Dangdeur 10"],
+        "KARANGANYAR": ["SPPG Subang Subang Karanganyar", "SPPG Subang Subang Karanganyar 2", "SPPG Subang Subang Karanganyar 3"],
+        "PARUNG": ["SPPG Subang Subang Parung"],
+        "PASIRKAREUMBI": ["SPPG Subang Subang Pasirikareumbi 1", "SPPG Subang Subang Pasirikareumbi 2", "SPPG Subang Subang Pasirikareumbi 3", "SPPG Subang Subang Pasirikareumbi 4", "SPPG Subang Subang Pasirikareumbi 5"],
         "SOKLAT": ["SPPG Subang Subang Soklat", "SPPG Subang Subang Soklat 2"],
         "SUKAMELANG": ["SPPG Subang Subang Sukamelang 1", "SPPG Subang Subang Sukamelang 2", "SPPG Subang Subang Sukamelang 3", "SPPG Subang Subang Sukamelang 4"]
     },
@@ -35,7 +179,16 @@ const dataSppg = {
         "SUKAREJA": ["SPPG Subang Sukasari Sukareja"]
     },
     "TAMBAKDAHAN": {
-        "KERTAJAYA": ["SPPG Subang Tambakdahan Kertajaya"]
+        "KERTAJAYA": ["SPPG Subang Tambakdahan Kertajaya"],
+        "RANCAUDIK": ["SPPG Subang Tambakdahan Rancaudik", "SPPG Subang Tambakdahan Rancaudik 2"],
+        "TAMBAKDAHAN": ["SPPG Subang Tambakdahan Tambakdahan", "SPPG Subang Tambakdahan Tambakdahan 2"]
+    },
+    "TANJUNGSIANG": {
+        "BUNIARA": ["SPPG Subang Tanjungsiang Buniara"],
+        "GANDASOLI": ["SPPG Subang Tanjungsiang Gandasoli"],
+        "SINDANGLAYA": ["SPPG Subang Tanjungsiang Sindanglaya"],
+        "SIRAP": ["SPPG Subang Tanjungsiang Sirap"],
+        "TANJUNGSIANG": ["SPPG Subang Tanjungsiang Tanjungsiang", "SPPG Subang Tanjungsiang Tanjungsiang 2"]
     }
 };
 
